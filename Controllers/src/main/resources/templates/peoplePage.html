@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>
+                Friends table...
+            </h3>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Age
+                    </th>
+                    <th>
+                        Weight
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- the below attribute is a for each loop -->
+                <tr th:each="p:${people}">
+                    <td th:text="${p.id}">
+                        ID
+                    </td>
+                    <td th:text="${p.name}">
+                        NAME
+                    </td>
+                    <td th:text="${p.age}">
+                        AGE
+                    </td>
+                    <td th:text="${p.weight}">
+                        WEIGHT
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
