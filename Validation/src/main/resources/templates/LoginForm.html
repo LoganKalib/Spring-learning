@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- th:action refers to the function that runs on submit, object refers to the Model that is being populated-->
+<form action="#" method="post" th:action="@{processLogin}" th:object="${loginModel}">
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <!-- we use the * to refer to the object defined in the form tag -->
+        <input th:field="*{username}" type="username" class="form-control" id="username">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input th:field="*{password}" type="password" class="form-control" id="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+</body>
+</html>
