@@ -2,5 +2,29 @@
 <html lang="en" layout:decorate="layouts/DefaultLayout">
 <body>
 
+<div layout:fragment="content">
+    <h1 th:text="${title}"></h1>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">OrderNo</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order:${orders}">
+            <th th:text="${order.id}">ID</th>
+            <th th:text="${order.orderNo}">ORDER NUMBER</th>
+            <th th:text="${order.productName}">PRODUCT NAME</th>
+            <th th:text="${order.price}">PRICE</th>
+            <th th:text="${order.quantity}">QUANTITY</th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
 </body>
 </html>
