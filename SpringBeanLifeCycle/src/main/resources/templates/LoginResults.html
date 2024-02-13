@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="layouts/DefaultLayout">
+<body>
+
+<div th:object="${loginModel}" layout:fragment="content">
+    <p>Username: <span th:text="*{username}"></span></p>
+    <p>Password: <span th:text="*{password}"></span></p>
+</div>
+</body>
+</html>
