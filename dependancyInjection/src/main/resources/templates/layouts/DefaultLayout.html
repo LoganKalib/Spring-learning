@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- we define the layout using the common header footer and content-->
+    <div th:replace="layouts/CommonHeader :: header"> Header will go here...</div>
+    
+    <section layout:fragment="content">
+        <p>put content here </p>
+    </section>
+
+    <div th:replace="layouts/CommonFooter :: footer"> Footer will go here...</div>
+</body>
+</html>
