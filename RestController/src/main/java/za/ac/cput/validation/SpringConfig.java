@@ -3,9 +3,7 @@ package za.ac.cput.validation;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.annotation.RequestScope;
-import org.springframework.web.context.annotation.SessionScope;
 import za.ac.cput.validation.Services.OrderBusinessService;
-import za.ac.cput.validation.Services.OrderBusinessService2;
 import za.ac.cput.validation.Services.OrderBusinessServiceInterface;
 
 @Configuration
@@ -15,6 +13,6 @@ public class SpringConfig {
     @RequestScope
     //@SessionScope
     public OrderBusinessServiceInterface getOrderBusiness(){
-        return new OrderBusinessService2();
+        return new OrderBusinessService();
     }
 }
