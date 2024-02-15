@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- the below layout defines that this should be in the default layout -->
+<html lang="en" layout:decorate="layouts/DefaultLayout">
+  <body>
+    <!-- the layout below defines where in the default it should go -->
+    <div layout:fragment="content">
+      <!-- th:action refers to the function that runs on submit, object refers to the Model that is being populated-->
+      <form
+        action="#"
+        method="post"
+        th:action="@{processLogin}"
+        th:object="${loginModel}"
+      >
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <!-- we use the * to refer to the object defined in the form tag -->
+          <input
+            th:field="*{username}"
+            type="text"
+            class="form-control"
+            id="username"
+          />
+          <!-- the below only displays if there are errors in the username, th:errors, tells the bindingResult what to look at-->
+          <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}">
+            Username error
+          </p>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            th:field="*{password}"
+            type="text"
+            class="form-control"
+            id="password"
+          />
+          <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+            Password Error
+          </p>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+  </body>
+</html>
