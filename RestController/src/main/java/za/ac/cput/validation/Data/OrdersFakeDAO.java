@@ -73,10 +73,10 @@ public class OrdersFakeDAO implements OrdersDataAccessInterface{
 
     @Override
     public OrderModel updateOne(long id, OrderModel updatedOrder) {
-        for (OrderModel order : orders) {
-            if (order.getId() == id) {
-                orders.set(orders.indexOf(order), updatedOrder);
-                return orders.get(orders.indexOf(order));
+        for (int i=0;i<orders.size();i++) {
+            if (orders.get(i).getId() == id) {
+                orders.set(i,updatedOrder);
+                return orders.get(i);
             }
         }
         return null;
